@@ -1,0 +1,59 @@
+﻿@model ForTravellers.Models.LoginVm
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserNameOrEmail" class="control-label"></label>
+                <input asp-for="UserNameOrEmail" class="form-control" />
+                <span asp-validation-for="UserNameOrEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    Don't have an account?   <a asp-action="Registration">Go to Registration</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+@if (Context.User.Identity.Name != null)
+{
+    <form asp-controller="Account" asp-action="LogOut" method="post" id="logoutForm" class="navbar-form navbar-right">
+        <ul class="navbar-nav navbar-right">
+            <li>
+                Hello @Context.User.Identity.Name!
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+}
+@* else
+{
+    <ul class="navbar-nav navbar-right">
+        <li><a class="nav-link text-dark" asp-controller="Account" asp-action="Registration">Register</a></li>
+        <li><a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
+ *@

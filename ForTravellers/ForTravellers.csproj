@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Templete\vendors\bootstrap\.github\CONTRIBUTING.md" />
+    <None Include="Templete\vendors\bootstrap\.github\ISSUE_TEMPLATE\bug.md" />
+    <None Include="Templete\vendors\bootstrap\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="Templete\vendors\bootstrap\.github\ISSUE_TEMPLATE\feature.md" />
+    <None Include="Templete\vendors\bootstrap\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="Templete\vendors\bootstrap\.github\SUPPORT.md" />
+    <None Include="Templete\vendors\jquery-validation-unobtrusive\.vsts-pipelines\builds\ci-public.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,79 @@
+﻿@model ForTravellers.Models.Pkg
+
+@* @{
+    ViewData["Title"] = "AddPkg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddPkg</h1>
+
+<h4>Pkg</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddPkg">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Offer" class="control-label"></label>
+                <input asp-for="Offer" class="form-control" />
+                <span asp-validation-for="Offer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@model TourProject.Models.Pkg *@
+@* @model YourNamespace.PkgViewModel
+ *@
+@{
+    ViewBag.Title = "AddPkg";
+    Layout = "_LoginPartial";
+}
+
+<h2>Add Package</h2>
+
+<div class="col-lg-6">
+    @using (Html.BeginForm("AddPkg", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <h2>Package name</h2>
+        <select name="Offers" class="form-control" style="outline:none; width: 90%; padding: .9em 1em; margin-top:10px; letter-spacing: 2px; font-size: 16px; color:#888; border:none; border:1px solid #bbb;border-left: 4px solid #bbb; background:none;border-radius:3px">
+            <option>--Select Offer--</option>
+            <option>Bronze Offer</option>
+            <option>Silver Offer</option>
+            <option>Premium Offer</option>
+            <option>Diamond Offer</option>
+            <option>Platinum</option>
+            <option>Gold</option>
+            <option>Platinum</option>
+        </select>
+
+        <!-- File input untuk gambar package -->
+        <input type="file" name="image" class="form-control mt-3" style="outline:none; width: 90%; padding: .9em 1em; letter-spacing: 2px; font-size: 16px; color:#888; border:none; border:1px solid #bbb;border-left: 4px solid #bbb; background:none;border-radius:3px" />
+
+        <!-- Textarea untuk deskripsi package -->
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control mt-3", style = "outline:none; width: 90%; padding: .9em 1em; letter-spacing: 2px; font-size: 16px; color:#888; border:none; border:1px solid #bbb;border-left: 4px solid #bbb; background:none;border-radius:3px" })
+
+        <!-- Submit button -->
+        <input type="submit" value="Add Package" class="btn btn-danger mt-3" />
+
+        <!-- Menampilkan pesan dari ViewBag -->
+        <h3>@ViewBag.p</h3>
+    }
+</div>

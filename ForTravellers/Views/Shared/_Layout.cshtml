@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TourProjectINTEC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Welcome to the heaven</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+
+                        <!-- Tambahkan link Add Package di sini -->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="AddPkg">Add Package</a>
+                        </li>
+                    </ul>
+
+                    @await Html.PartialAsync("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - ForTravellers  - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+ 
+
+
+@* @if (Context.User.Identity.Name != null)
+{
+    <form asp-controller="Account" asp-action="LogOut" method="post" id="logoutForm" class="navbar-form navbar-right">
+        <ul class="navbar-nav navbar-right">
+            <li>
+                Hello @Context.User.Identity.Name!
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="navbar-nav navbar-right">
+        <li><a class="nav-link text-dark" asp-controller="Account" asp-action="Registration">Register</a></li>
+        <li><a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+} *@
+
+@* <DOCTYPE html>
+
+    <html>
+    <head>
+          <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TourProjectINTEC.styles.css" asp-append-version="true" />
+
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width" />
+        <title>AdminDashB</title>
+
+        <meta charset="utf-8"
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sufee Admin - HTML5 Admin Template</title>
+        <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+        <meta name="viewport" content="width=device-width, initial-scale=1 ">
+        <link rel="apple-touch-icon" href="apple-icon.png">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="~Templete/assets/css/normalize.css">
+        <link rel="stylesheet" href="~Templete/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~Templete/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~Templete/assets/css/themify-icons.css">
+        <link rel="stylesheet" href="~Templete/assets/css/flag-icon.min.css">
+        <link rel="stylesheet" href="~Templete/assets/css/cs-skin-elastic.css">
+        <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+        <link rel="stylesheet" href="assets/scss/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"><script> -->
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Wlecome to the heaven</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    @await Html.PartialAsync("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">
+
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <br /><br /><br />
+                </div>
+
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            @await Html.PartialAsync("_Layout")
+                        </li>
+                        <h3 class="menu-title"></h3><!-- /.menu-title -->
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Packagae Details</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa fa-id-puzzle-piece"></i><a href="@Url.Action("AddPkg")">AddPkg</a></li>
+                                <li><i class="fa fa-id-badge"></i><a href="@Url.Action("AddPkg")">Add Packages</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Service Details</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa fa-table"></i><a href="@Url.Action("AddPkg")">Services List</a></li>
+                                <li><i class="fa fa-table"></i><a href="@Url.Action("Services")">Add Services</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+            </nav>
+        </aside>
+        <div id="right-panel" class="right-panel">
+            <div class="content mt-3">
+                <div class="animated fadeIn">
+                    <div class="row" style="margin-left:200px;">
+                        <script src="~Scripts/modernizr-2.6.2.js"></script>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="~Templete/assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="~Templete/assets/js/popper.min.js"></script>
+        <script src="~Templete/assets/js/plugins.js"></script>
+        <script src="~Templete/assets/js/main.js"></script>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2024 - ForTravellers  - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>
+ *@
